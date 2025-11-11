@@ -9,7 +9,7 @@
 #let title = "Introduzione al Corso"
 #let course = "Python: da Zero a OOP"
 #let author = "Riccardo Sacchetto, B.Sc."
-#let email = "rsacchetto@nexxontech.it"
+#let email = "riccardo.sacchetto@itsdigitalacademy.com"
 
 // Configurazione delle proprietà base
 #set text(font: "New Computer Modern", size: 10pt, fill: black, lang: "it")

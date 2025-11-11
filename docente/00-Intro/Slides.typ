@@ -12,7 +12,7 @@
 #let title = "Introduzione al Corso"
 #let course = "Python: da Zero a OOP"
 #let author = "Riccardo Sacchetto, B.Sc."
-#let email = "rsacchetto@nexxontech.it"
+#let email = "riccardo.sacchetto@itsdigitalacademy.com"
 
 
 // == Content ==
