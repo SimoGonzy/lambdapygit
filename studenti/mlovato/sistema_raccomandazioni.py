@@ -38,7 +38,7 @@ for utente in db_utenti:
             valore_utente_simile = temp
             utente_simile = utente
 
-print(f"L'utente più simile è: {utente_simile["utente"]}") 
+print(f"L'utente più simile è: {utente_simile['utente']}") 
 
 for film in utente_simile["film_graditi"]:
     if film not in utente_corrente["film_graditi"]:

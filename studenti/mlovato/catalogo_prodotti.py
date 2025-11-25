@@ -9,9 +9,10 @@ prodotti in catalogo. Il programma deve permettere di:
 • Trovare il prodotto più costoso o più economico; +30exp
 Strutture Dati: Liste, Tuple e Dizionari - Python: da Zero a OOP - Riccardo Sacchetto, B.Sc.
 """
+
 prodotto: dict[str, str | int]
 
-catalogo: list[dict[str, str|int]] = []
+catalogo: list[dict[str, str | int]] = []
 
 scelta: str = "inizio"
 
@@ -24,27 +25,27 @@ while scelta != "esci":
     print("5 - Trova il prodotto più costoso/economico")
     print("esci")
     print("")
-    
+
     scelta = input("Fai la tua scelta: ")
     print("---------------")
 
     if scelta == "1":
         print("Lista di tutti i prodotti: ")
         for prodotto in catalogo:
-            print(f"Nome: {prodotto["nome"]}")
-            print(f"Categoria: {prodotto["categoria"]}")
-            print(f"Prezzo: {prodotto["prezzo"]}")
+            print(f"Nome: {prodotto['nome']}")
+            print(f"Categoria: {prodotto['categoria']}")
+            print(f"Prezzo: {prodotto['prezzo']}")
             print("---------------")
     elif scelta == "2":
         print("Rimuovere un prodotto: ")
         nome: str = input("Il nome del prodotto da rimuovere?: ")
-        
+
         for prodotto in catalogo:
             if prodotto["nome"] == nome:
                 catalogo.remove(prodotto)
 
     elif scelta == "3":
-        prodotto: dict[str, str | int] = {}
+        prodotto = {}
         print("Aggiungi un nuovo elemento")
         prodotto["nome"] = input("Inserisci il nome del prodotto: ")
         prodotto["categoria"] = input("Inserisci una categoria: ")
@@ -57,32 +58,42 @@ while scelta != "esci":
         print("---------------")
     elif scelta == "4":
         scelta_categoria_prezzo = input("Filtra per categoria o prezzo? ")
-        while(not(scelta_categoria_prezzo == "categoria" or scelta_categoria_prezzo == "prezzo")):
+        while not (
+            scelta_categoria_prezzo == "categoria"
+            or scelta_categoria_prezzo == "prezzo"
+        ):
             scelta_categoria_prezzo = input("Filtra per categoria o prezzo? ")
-        if(scelta_categoria_prezzo == "categoria"):
+        if scelta_categoria_prezzo == "categoria":
             categoria: str = input("Che categoria? ")
             print("categoria")
             for prodotto in catalogo:
                 if prodotto["categoria"] == categoria:
-                    print(f"Nome: {prodotto["nome"]}")
-                    print(f"Categoria: {prodotto["categoria"]}")
-                    print(f"Prezzo: {prodotto["prezzo"]}")
+                    print(f"Nome: {prodotto['nome']}")
+                    print(f"Categoria: {prodotto['categoria']}")
+                    print(f"Prezzo: {prodotto['prezzo']}")
                     print("---------------")
-        if(scelta_categoria_prezzo == "prezzo"):
+        if scelta_categoria_prezzo == "prezzo":
             prezzo_str: str = input("Che prezzo? ")
-            while not(prezzo_str.isnumeric()):
+            while not (prezzo_str.isnumeric()):
                 prezzo_str = input("Il prezzo deve essere un numero! ")
             prezzo: int = int(prezzo_str)
             for prodotto in catalogo:
                 if prodotto["prezzo"] == prezzo:
-                    print(f"Nome: {prodotto["nome"]}")
-                    print(f"Categoria: {prodotto["categoria"]}")
-                    print(f"Prezzo: {prodotto["prezzo"]}")
+                    print(f"Nome: {prodotto['nome']}")
+                    print(f"Categoria: {prodotto['categoria']}")
+                    print(f"Prezzo: {prodotto['prezzo']}")
                     print("---------------")
     elif scelta == "5":
-        scelta_costoso_economico: str = input("Vuoi vedere il prodotto più costoso o più economico? ")
-        while not(scelta_costoso_economico == "costoso" or scelta_costoso_economico == "economico"):
-            scelta_costoso_economico = input("Le scelte possibili sono costoso o economico: ")
+        scelta_costoso_economico: str = input(
+            "Vuoi vedere il prodotto più costoso o più economico? "
+        )
+        while not (
+            scelta_costoso_economico == "costoso"
+            or scelta_costoso_economico == "economico"
+        ):
+            scelta_costoso_economico = input(
+                "Le scelte possibili sono costoso o economico: "
+            )
         if scelta_costoso_economico == "costoso":
             prezzo_piu_costoso = 0
             for prodotto in catalogo:
@@ -91,9 +102,9 @@ while scelta != "esci":
                     prezzo_piu_costoso = int(prodotto["prezzo"])
             for prodotto in catalogo:
                 if prodotto["prezzo"] == prezzo_piu_costoso:
-                    print(f"Nome: {prodotto["nome"]}")
-                    print(f"Categoria: {prodotto["categoria"]}")
-                    print(f"Prezzo: {prodotto["prezzo"]}")
+                    print(f"Nome: {prodotto['nome']}")
+                    print(f"Categoria: {prodotto['categoria']}")
+                    print(f"Prezzo: {prodotto['prezzo']}")
                     print("---------------")
         if scelta_costoso_economico == "economico":
             prezzo_piu_economico: int = int(catalogo[0]["prezzo"])
@@ -103,9 +114,9 @@ while scelta != "esci":
                     prezzo_piu_economico = int(prodotto["prezzo"])
             for prodotto in catalogo:
                 if prodotto["prezzo"] == prezzo_piu_economico:
-                    print(f"Nome: {prodotto["nome"]}")
-                    print(f"Categoria: {prodotto["categoria"]}")
-                    print(f"Prezzo: {prodotto["prezzo"]}")
+                    print(f"Nome: {prodotto['nome']}")
+                    print(f"Categoria: {prodotto['categoria']}")
+                    print(f"Prezzo: {prodotto['prezzo']}")
                     print("---------------")
     elif scelta == "esci":
         print("Uscita in corso...")
