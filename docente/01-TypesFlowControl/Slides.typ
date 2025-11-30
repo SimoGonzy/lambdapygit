@@ -37,13 +37,6 @@
 ]
 
 #slidew(
-  slide_title: "Warm-up iniziale: Quiz Time!",
-  title: title, course: course, author: author
-)[
-  #url_with_qr("https://311to.site/bh")
-]
-
-#slidew(
   slide_title: "Proposte di progetto",
   title: title, course: course, author: author
 )[
@@ -119,4 +112,11 @@
   title: title, course: course, author: author
 )[
   #url_with_qr("https://311to.site/bi")
+]
+
+#slidew(
+  slide_title: "Per ripassare a casa",
+  title: title, course: course, author: author
+)[
+  #url_with_qr("https://take.panquiz.com/8287-4913-9383")
 ]
