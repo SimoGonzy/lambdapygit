@@ -16,17 +16,20 @@ def verifica_pos(x, y, len_x, len_y):
 def main():
     diagram: list[list[str]] = parse_exercise("./puzzle_input.txt")
     contatore: int = 0
+    # creo le tuple di direzioni da cercare (1,1), (-1,0)... escludo (0,0)
     directions = [[(x,y) for y in [-1, 0, 1] if x!=0 or y!=0] for x in [-1, 0, 1]]
     # TODO: Implementare la soluzione utilizzando il diagramma contenuto in `diagram`
-    x=0
-    y=0
     for x, riga in enumerate(diagram):
         for y, value in enumerate(riga):
+            # se sono in una casella con @
             if value == "@":
                 adiacenti: int = 0
+                # conto quanti adiacenti ci sono
                 for row in directions:
                     for add_x, add_y in row:
+                        # verifico che la posizione che devo cercare sia valida
                         if verifica_pos(x+add_x, y+add_y, len(diagram), len(diagram[0])):
+                            # se la posizione è valida e contiene @ conto gli adiacenti
                             if diagram[x+add_x][y+add_y] == "@":
                                 adiacenti += 1
                 if adiacenti < 4:
