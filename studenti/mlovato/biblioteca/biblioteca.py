@@ -38,9 +38,9 @@ class Scaffale:
             self.tema = libro.genere
         self.lista_libri.append(libro)
 
-    def cerca_libro_nome(self, libro_nome: Libro):
+    def cerca_libro_nome(self, libro_nome: str):
         for libro in self.lista_libri:
-            if libro.titolo_libro() == libro_nome:
+            if libro.titolo_libro().lower() == libro_nome.lower():
                 return libro
         return None
 
