@@ -76,7 +76,7 @@
       gutter: 0.8em,
       columns: 2,
       text(weight: "bold", "Docente:"),
-      text(author + " " + sym.angle.l + email + sym.angle.r),
+      text(author + " " + sym.chevron.l + email + sym.chevron.r),
     )
   )
 
