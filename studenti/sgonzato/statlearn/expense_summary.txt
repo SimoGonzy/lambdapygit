@@ -1,0 +1,4 @@
+Food: 88.25
+Transport: 45.0
+Rent: 500.0
+Leisure: 35.2
