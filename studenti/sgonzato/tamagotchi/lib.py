@@ -54,15 +54,7 @@ class ListaTamagotchi:
         
     def rimuovi_tamagotchi(self, tamagotchi: Tamagotchi):
         self.lista.remove(tamagotchi)
-
-'''
-I cuccioli si stancano più velocemente quando giocano, ma si
-riposano più velocemente quando dormono;
-• Gli adulti si stancano meno velocemente, ma richiedono più
-cibo per essere nutriti.
-Lavorare con il filesystem - Python: da Zero a OOP - Riccardo Sacchetto, B.Sc.
-'''
-     
+  
 class Adulti(Tamagotchi):
     def __init__(self, nome: str):
         super().__init__(nome)
