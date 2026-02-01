@@ -43,13 +43,14 @@
     ),
   )
 
-  if level == 0 {
-    heading(slide_title)
-  } else {
-    heading(slide_title + difficulty(level))
+  if slide_title != "" {
+    if level == 0 {
+      heading(slide_title)
+    } else {
+      heading(slide_title + difficulty(level))
+    }
+    v(1em)
   }
-
-  v(1em)
 
   body
 }
