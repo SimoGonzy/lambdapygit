@@ -1,0 +1,24 @@
+n=int(input("Quante operazione vuoi fare\t"))
+
+while(n>=0):
+ numero1= int(input (f"Inserisci il primo numero della {n}° operazione\t"))
+ numero2= int(input(f"Inserisci il secondo numero della {n}° operazione\t"))
+ operazione = input("Inserisci l'operazione che vuoi fare(+,-,x,:)\t")
+
+ if(operazione=="+"):
+    risultato=numero1+numero2
+    
+ elif(operazione=="-"):
+    risultato=numero1-numero2
+
+ elif(operazione=="x"):
+    risultato=numero1*numero2
+
+ elif(operazione==":"):
+  risultato=numero1/numero2
+
+ else:
+    risultato="Operazione non valida"
+ 
+ print("Risultato: ",risultato)
+ n-=1

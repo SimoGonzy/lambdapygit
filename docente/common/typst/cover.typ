@@ -62,21 +62,21 @@
 
   v(2em)
 
-  text(weight: 700, 20pt, course)
+  text(weight: 700, 18pt, course)
   linebreak()
-  text(weight: 700, 24pt, title)
+  text(weight: 700, 26pt, title)
+
+  v(2em)
+
+  text(description)
   v(1em)
-  text(18pt, description)
-
-  v(1.5em)
-
   pad(
     x: 0.1em,
     grid(
       gutter: 0.8em,
       columns: 2,
       text(weight: "bold", "Docente:"),
-      text(author + " " + sym.angle.l + email + sym.angle.r),
+      text(author + " " + sym.chevron.l + email + sym.chevron.r),
     )
   )
 

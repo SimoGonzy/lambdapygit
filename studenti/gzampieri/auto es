@@ -1,0 +1,42 @@
+# rappresentare flotte di veiocli o autovettura o autocarro con dati diversi es posti, massa che può trasportre ecc
+class Veicolo:
+     
+    def__init(self,targa:str,marca:str,modello: str, anno:int):
+    self.targa:str=targa
+    self.marca:str = marca
+    self.modello:str=modello
+    self.anno: int=anno
+
+def eta(self,anno_corrente:int)->int:
+    return anno_corrente - self.anno
+
+def tassa_circolazione(self) ->float:
+    return 100.0
+
+
+class Autovettura(Veicolo):
+     def__init__(self,targa:str,marca:str,modello: str, anno:int,posti_a_sedere:int):
+     super().__init(targa,marca,modello,anno)
+     self.posti_a_sedere:int=posti_a_sedere
+    
+class Autovettura(Veicolo):
+    def__init__(self,targa:str,marca:str,modello: str, anno:int,capacita_carico:int):
+    super().__init(targa,marca,modello,anno)
+    self.capacita_carico:int = capacita_carico
+
+def puo_trasportare(self,peso:int)->bool:
+    return peso <= self.capacita_carico
+
+def tassa_circolazione(self) ->float:
+    return self.capacita_carico * 2.0
+
+#polimorfismo 
+
+flotta: list[veicolo]=[auto,camion]
+for veicolo in flotta:
+    print(veicolo.targa)
+    if type(Veicolo) is autocarro
+    print(#qualcosa che mqnca)
+#----------------------------------
+
+class Dipendente:

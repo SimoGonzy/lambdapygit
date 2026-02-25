@@ -1,0 +1,57 @@
+#livello 1 
+
+# dati principlai es anagrafici del dipendente
+
+class Dipendente:
+    def __init__(self,nome :str, cognome : str,  cf :str,  pagaallora: float):
+    
+        self.nome:str=nome 
+        self.cognome:str=cognome 
+        self.cf:str=cf
+        self.pagaallora: float = pagaallora
+
+    # calcolo stipendio
+    def calcola_stipendio(self, ore_lavorate: int) -> float:
+         return self.pagaallora * ore_lavorate
+    # stampa dell'oggetto con print()
+    def __str__(self) -> str:
+        return (f"Dipendente: {self.nome} {self.cognome} '  "f"CF: {self.cf} '  "f"Paga oraria: {self.pagaallora:.2f} €/h")
+    # stipendi minori di 
+    def __lt__(self, other):
+        return self.pagaallora < other.pagaallora
+    # stipendi minmaggiori di 
+    def __gt__(self, other):
+         return self.pagaallora > other.pagaallora
+    # stipendi uguali 
+    def __eq__(self, other):
+        return self.pagaallora == other.pagaallora 
+
+# livello 2 
+
+class Menager(Dipendente):
+    def __init__(self,nome :str, cognome : str,  cf :str,  pagaallora: float,numero_sottoposti : int):
+       
+        # suepr sevre per chiamare la classe base Dipendenti cosi che manager possa erediatre i dati dentro Dipendeni
+        
+        super().__init__(nome,cognome,pagaallora)
+        self.numero_sottoposti=numero_sottoposti 
+        
+        # calcolo stipendio con bonus
+
+    def calcola_stipendio(self, ore_lavorate: int) -> float:
+        stipendio_base = super().calcola_stipendio(ore_lavorate)
+        bonus = self.numero_sottoposti * 50  # 50€ per ogni sottoposto
+        return stipendio_base + bonus
+    
+    
+    class Commerciale(Dipendente):
+        def __init__(self, nome: str, cognome: str, cf: str, pagaallora: float, provvigione_percentuale: float):
+         super().__init__(nome, cognome, cf, pagaallora)  # prendiamo i dati da Dipendente
+         self.provvigione_percentuale = provvigione_percentuale 
+        
+        # calcolo stipendio
+        def calcola_stipendio(self, ore_lavorate: float, fatturato: float = 0) -> float:
+            stipendio_base = super().calcola_stipendio(ore_lavorate)
+            provvigione = fatturato * self.provvigione_percentuale / 100
+            return stipendio_base + provvigione
+

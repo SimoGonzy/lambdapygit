@@ -1,25 +1,14 @@
 [
   {
-    "label": "Compile Document",
+    "label": "Compile $ZED_FILE",
     "command": "typst",
-    "args": [ "c", "--root", ".", "$ZED_FILE" ],
+    "args": [ "c", "--root", "$ZED_WORKTREE_ROOT", "$ZED_FILE" ],
     "allow_concurrent_runs": false
   },
   {
-    "label": "Watch Document",
+    "label": "Watch $ZED_FILE",
     "command": "typst",
-    "args": [ "w", "--root", ".", "$ZED_FILE" ],
+    "args": [ "w", "--root", "$ZED_WORKTREE_ROOT", "$ZED_FILE" ],
     "allow_concurrent_runs": false
-  },
-  {
-    "label": "Run Python Script",
-    "command": "python",
-    "args": [ "$ZED_FILE" ],
-    "shell": {
-      "with_arguments": {
-        "program": "/usr/bin/env",
-        "args": [ "bash" ]
-      }
-    }
   }
 ]
